@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import '../widgets/widget_signin/otp_text_fields.dart';
 
 // ignore: use_key_in_widget_constructors

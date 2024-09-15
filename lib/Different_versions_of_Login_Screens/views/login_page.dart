@@ -53,7 +53,9 @@ class _LoginPageState extends State<LoginPage> {
                   const ForgotPassword(),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                   //! Button Sign in
-                  const BottomSignin(),
+                  const BottomSignin(
+                    name: "Sign in",
+                  ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                   //! OR
                   const Text("(or)", style: TextStyle(fontSize: 16)),
