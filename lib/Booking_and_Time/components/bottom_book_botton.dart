@@ -9,7 +9,8 @@ class BottomBookButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const BottomSignin(
+    return BottomSignin(
+      onTap: () {},
       name: 'Book Now',
     );
   }

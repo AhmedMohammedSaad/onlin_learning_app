@@ -1,11 +1,11 @@
-// A reusable function that returns a custom AppBar widget
-// It takes a 'title' parameter which will be displayed as the title of the AppBar
+//! A reusable function that returns a custom AppBar widget
+//! It takes a 'title' parameter which will be displayed as the title of the AppBar
 
-// A custom widget that renders a calendar using the TableCalendar package.
-// The widget allows the user to select a date from the calendar.
-// Parameters:
-// - selectedDate: The currently selected date in the calendar.
-// - onDaySelected: A callback function that updates the state when a new day is selected.
+// !A custom widget that renders a calendar using the TableCalendar package.
+// !The widget allows the user to select a date from the calendar.
+// !Parameters:
+// !- selectedDate: The currently selected date in the calendar.
+//! - onDaySelected: A callback function that updates the state when a new day is selected.
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:table_calendar/table_calendar.dart';

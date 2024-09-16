@@ -53,7 +53,8 @@ class _LoginPageState extends State<LoginPage> {
                   const ForgotPassword(),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                   //! Button Sign in
-                  const BottomSignin(
+                  BottomSignin(
+                    onTap: () {},
                     name: "Sign in",
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.02),

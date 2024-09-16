@@ -15,9 +15,9 @@ Future<dynamic> showdialog(BuildContext context, Size screenSize) {
         alignment: Alignment.center,
         child: AccountSelectionWidget(
           screenSize: screenSize,
-          accountName: accountName, // Example account name
-          email: email, // Example email
-          appName: appName, // Example application name
+          accountName: accountName, //! Example account name
+          email: email, //! Example email
+          appName: appName, //! Example application name
         ),
       );
     },
