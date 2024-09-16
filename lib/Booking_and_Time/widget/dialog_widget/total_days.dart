@@ -30,6 +30,7 @@ class TotalDays extends StatelessWidget {
             ],
           ),
         ),
+        const SizedBox(height: 40),
       ],
     );
   }

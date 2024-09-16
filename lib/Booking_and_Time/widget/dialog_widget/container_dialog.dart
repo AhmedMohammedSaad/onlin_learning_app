@@ -21,14 +21,13 @@ class ContainerDialog extends StatelessWidget {
         crossAxisAlignment:
             CrossAxisAlignment.start, // Aligns content to the left
         children: [
-          DialogTitle(),
+          DialogTitle(), SizedBox(height: 40),
           DialogLearnedInfo(),
           //! Spacing between elements
           SizedBox(height: 40),
           TotalDays(),
           //! Spacing between elements
           WeeklyRecord(),
-          SizedBox(height: 40),
           // !Spacing before the week circles
           SizedBox(height: 30),
           ListOfNumper(),
