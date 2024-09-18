@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:onlin_learning_app/Different_versions_of_Login_Screens/widgets/widget_signin/show_dialog.dart';
+import 'package:onlin_learning_app/src/Different_versions_of_Login_Screens/widgets/widget_signin/show_dialog.dart';
 
 class GoogleLoginButton extends StatelessWidget {
   const GoogleLoginButton({

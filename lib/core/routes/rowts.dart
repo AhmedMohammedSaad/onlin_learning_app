@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:onlin_learning_app/Booking_and_Time/view/timer.dart';
-import 'package:onlin_learning_app/Different_versions_of_Login_Screens/views/login_page.dart';
-import '../Booking_and_Time/view/booking.dart';
-import '../Different_versions_of_Login_Screens/views/signin_page.dart';
-import '../Different_versions_of_Login_Screens/views/sin_up_verification_code.dart';
-import '../Different_versions_of_Login_Screens/views/verify_phone.dart';
-import '../onboarding/views/pages/home_screen.dart';
+import 'package:onlin_learning_app/src/Booking_and_Time/view/timer.dart';
+import 'package:onlin_learning_app/src/Different_versions_of_Login_Screens/views/login_page.dart';
+import '../../src/Booking_and_Time/view/booking.dart';
+import '../../src/Different_versions_of_Login_Screens/views/signin_page.dart';
+import '../../src/Different_versions_of_Login_Screens/views/sin_up_verification_code.dart';
+import '../../src/Different_versions_of_Login_Screens/views/verify_phone.dart';
+import '../../src/onboarding/views/pages/home_screen.dart';
 
 //! the file Route
 class RouteGenerator {

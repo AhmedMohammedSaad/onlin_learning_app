@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:onlin_learning_app/Different_versions_of_Login_Screens/widgets/widget_login/boton_signub.dart';
-import 'package:onlin_learning_app/Different_versions_of_Login_Screens/widgets/widget_login/password_field.dart';
+import 'package:onlin_learning_app/src/Different_versions_of_Login_Screens/widgets/widget_login/boton_signub.dart';
+import 'package:onlin_learning_app/src/Different_versions_of_Login_Screens/widgets/widget_login/password_field.dart';
 import '../widgets/widget_login/forgot_password.dart';
 import '../widgets/widget_login/have_an_account_signup_text.dart';
 import '../widgets/widget_login/sigin_google.dart';

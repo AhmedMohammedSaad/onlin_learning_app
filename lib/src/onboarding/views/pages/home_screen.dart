@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:onlin_learning_app/onboarding/views/pages/page_view.dart';
+import 'package:onlin_learning_app/src/onboarding/views/pages/page_view.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../models/model.dart';
 import '../widgets/bottom_login.dart';

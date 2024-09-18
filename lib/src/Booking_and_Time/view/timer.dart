@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:onlin_learning_app/Different_versions_of_Login_Screens/widgets/widget_login/boton_signub.dart';
+import 'package:onlin_learning_app/src/Different_versions_of_Login_Screens/widgets/widget_login/boton_signub.dart';
 import '../components/appbar_mthode.dart';
 import '../widget/booking_widget/stack_good_job.dart';
 import '../widget/timer_widget/time_display.dart';

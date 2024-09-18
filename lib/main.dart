@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:onlin_learning_app/Booking_and_Time/model/constant.dart';
+import 'package:onlin_learning_app/src/Booking_and_Time/model/constant.dart';
 
-import 'routes/rowts.dart';
+import 'core/routes/rowts.dart';
 
 void main() {
   runApp(const MyApp());

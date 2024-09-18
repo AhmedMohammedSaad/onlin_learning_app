@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:onlin_learning_app/Different_versions_of_Login_Screens/widgets/widget_signin/dialog.dart';
+import 'package:onlin_learning_app/src/Different_versions_of_Login_Screens/widgets/widget_signin/dialog.dart';
 
 Future<dynamic> showdialog(BuildContext context, Size screenSize) {
   String accountName = 'Ahmed Mohamed Saad';
