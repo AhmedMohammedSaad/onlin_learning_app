@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
                 scaffoldBackgroundColor: ColorApp.backgroundColor),
             debugShowCheckedModeBanner: false,
             //! I used this route to navigate between screens because it’s better
-            initialRoute: '/TimerPage',
+            initialRoute: '/DetailsScreen',
             onGenerateRoute: RouteGenerator.generateRoute,
           );
         });

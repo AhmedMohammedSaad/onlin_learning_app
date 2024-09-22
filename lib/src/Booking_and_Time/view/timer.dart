@@ -16,7 +16,7 @@ class TimerPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       //! appbar Mathod
-      appBar: appbar('Timer'),
+      appBar: appbar('Timer', const Icon(Icons.notifications_none_outlined)),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
         child: Column(

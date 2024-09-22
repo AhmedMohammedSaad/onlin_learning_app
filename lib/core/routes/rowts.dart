@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:onlin_learning_app/src/Booking_and_Time/view/timer.dart';
 import 'package:onlin_learning_app/src/Different_versions_of_Login_Screens/views/login_page.dart';
 import '../../src/Booking_and_Time/view/booking.dart';
+import '../../src/Course_page_Detailes/views/details.dart';
 import '../../src/Different_versions_of_Login_Screens/views/signin_page.dart';
 import '../../src/Different_versions_of_Login_Screens/views/sin_up_verification_code.dart';
 import '../../src/Different_versions_of_Login_Screens/views/verify_phone.dart';
@@ -29,6 +30,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const Booking());
       case '/TimerPage':
         return MaterialPageRoute(builder: (_) => const TimerPage());
+      case '/DetailsScreen':
+        return MaterialPageRoute(builder: (_) => const DetailsScreen());
       default:
         //!Home Page If the path does not exist, the page is displayed.
         return MaterialPageRoute(builder: (_) => const HomeScreen());

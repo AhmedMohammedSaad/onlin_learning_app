@@ -23,7 +23,8 @@ class _BookingState extends State<Booking> {
   Widget build(BuildContext context) {
     return Scaffold(
       //! Display the custom appbar
-      appBar: appbar('Class Booking'),
+      appBar: appbar(
+          'Class Booking', const Icon(Icons.notifications_none_outlined)),
 
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
