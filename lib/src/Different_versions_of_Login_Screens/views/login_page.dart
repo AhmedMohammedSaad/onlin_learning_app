@@ -1,12 +1,16 @@
+// ignore_for_file: avoid_print
+
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:onlin_learning_app/src/Different_versions_of_Login_Screens/widgets/widget_login/boton_signub.dart';
-import 'package:onlin_learning_app/src/Different_versions_of_Login_Screens/widgets/widget_login/password_field.dart';
-import '../widgets/widget_login/forgot_password.dart';
+import '../models/constant.dart';
 import '../widgets/widget_login/have_an_account_signup_text.dart';
+import '../widgets/widget_login/pinger_print.dart';
 import '../widgets/widget_login/sigin_google.dart';
 import '../widgets/widget_login/icon_look_login.dart';
 import '../widgets/widget_login/text.dart';
 import '../widgets/widget_login/text_field.dart';
+import 'package:http/http.dart' as http;
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -16,8 +20,15 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  bool isVisibility = true;
+  final TextEditingController gmailControl = TextEditingController();
+  final TextEditingController passControl = TextEditingController();
+  final GlobalKey gkey = GlobalKey<FormState>();
+  final GlobalKey pkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xffE4F1F8),
@@ -40,21 +51,49 @@ class _LoginPageState extends State<LoginPage> {
                   const TextSubtitle(),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                   //! TextField for email
-                  const ResponsiveTextField(
+                  ResponsiveTextField(
+                    controller: gmailControl,
+                    key: gkey,
                     obscureText: false,
-                    lrefixIcons: Icon(Icons.email_outlined),
+                    lrefixIcons: const Icon(Icons.email_outlined),
                     labelText: 'Email',
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                   //! TextField for password
-                  const PasswordField(),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-                  //! Text ForgotPassword
-                  const ForgotPassword(),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: ResponsiveTextField(
+                          key: pkey,
+                          controller: passControl,
+                          obscureText: isVisibility,
+                          lrefixIcons: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                //! Toggle visibility of the password
+                                isVisibility = !isVisibility;
+                              });
+                            },
+                            icon: isVisibility
+                                ? const Icon(Icons.visibility_off_outlined)
+                                : const Icon(
+                                    Icons.visibility_outlined,
+                                  ),
+                          ),
+                          labelText: 'Password',
+                        ),
+                      ),
+                      PingerPrint(screenWidth: screenWidth),
+                    ],
+                  ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                   //! Button Sign in
                   BottomSignin(
-                    onTap: () {},
+                    onTap: () {
+                      _signIn();
+                    },
                     name: "Sign in",
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.02),
@@ -73,5 +112,33 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+//! the Function Sing In => Api
+  _signIn() async {
+    final body = json.encode({
+      "email": gmailControl.text,
+      "password": passControl.text,
+    });
+    http.Response response = await http.post(
+      Uri.parse('${paseUrl}auth/login'),
+      headers: {"Content-Type": "application/json"},
+      body: body,
+    );
+    if (response.statusCode == 200) {
+      var errorResponse = json.decode(response.body);
+      var errorMessage = errorResponse['data']['_id'];
+      print(errorMessage);
+      print(response.statusCode);
+      print('Success');
+      // ignore: use_build_context_synchronously
+      Navigator.pushNamed(context, '/');
+    } else {
+      var errorResponse = json.decode(response.body);
+      var errorMessage = errorResponse['message'];
+      print(errorMessage);
+      print(response.statusCode);
+      print('Error');
+    }
   }
 }
