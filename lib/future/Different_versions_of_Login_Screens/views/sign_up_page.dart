@@ -3,7 +3,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:onlin_learning_app/src/Different_versions_of_Login_Screens/models/constant.dart';
+import 'package:onlin_learning_app/future/Different_versions_of_Login_Screens/models/constant.dart';
 
 import '../widgets/widget_login/boton_signub.dart';
 import '../widgets/widget_login/icon_look_login.dart';
