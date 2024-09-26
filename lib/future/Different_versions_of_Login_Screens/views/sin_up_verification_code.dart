@@ -3,12 +3,21 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../widgets/widget_signin/otp_text_fields.dart';
 
 // ignore: use_key_in_widget_constructors
-class VerificationCode extends StatelessWidget {
+class VerificationCode extends StatefulWidget {
+  @override
+  State<VerificationCode> createState() => _VerificationCodeState();
+}
+
+final TextEditingController controler = TextEditingController();
+
+List<TextEditingController> controllers =
+    List.generate(6, (index) => TextEditingController());
+
+class _VerificationCodeState extends State<VerificationCode> {
   @override
   Widget build(BuildContext context) {
     // Get screen size for responsiveness
     final screenSize = MediaQuery.of(context).size;
-
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xffE4F1F8),
@@ -115,7 +124,7 @@ class VerificationCode extends StatelessWidget {
                                   fontWeight: FontWeight.w500),
                             ),
                             const SizedBox(height: 16.0),
-                            const OTPTextFields(), // حقول OTP
+                            OTPTextFields(), // حقول OTP
                             const SizedBox(height: 16.0),
 
                             ElevatedButton(
