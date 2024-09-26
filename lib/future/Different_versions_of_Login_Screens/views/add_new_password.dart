@@ -26,6 +26,7 @@ class _AddNewPasswordState extends State<AddNewPassword> {
         body: Form(
       key: gkey,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ResponsiveTextField(
             validator: (value) {
@@ -83,9 +84,11 @@ class _AddNewPasswordState extends State<AddNewPassword> {
 
   // ignore: unused_element
   _addNewPassword() async {
-    var responseBody = json
-        .encode({"email": gmailControl.text, "newPassword": passControl.text});
-    var url = Uri.parse('${paseUrl}auth/verifyResetCode');
+    var responseBody = json.encode({
+      "email": gmailControl.text,
+      "newPassword": passControl.text,
+    });
+    var url = Uri.parse('${paseUrl}auth/resetPassword');
     http.Response response = await http.put(
       url,
       headers: {"Content-Type": "application/json"},
@@ -104,10 +107,11 @@ class _AddNewPasswordState extends State<AddNewPassword> {
 
       gmailControl.clear();
       passControl.clear();
-      Navigator.pushNamed(context, '/AddNewPassword');
+      Navigator.pushNamed(context, '/');
     } else {
       var responseDecode = json.decode(response.body);
       var errorMessage = responseDecode["message"];
+      print(response.statusCode);
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text(errorMessage.toString()),
       ));
