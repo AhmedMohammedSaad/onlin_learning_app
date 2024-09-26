@@ -66,18 +66,7 @@ class _SignUpState extends State<SignUp> {
                     ),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                     //! TextField for email
-                    ResponsiveTextField(
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Enter your Email';
-                        }
-                        return null;
-                      },
-                      controller: gmailControl,
-                      obscureText: false,
-                      lrefixIcons: const Icon(Icons.email_outlined),
-                      labelText: 'Email',
-                    ),
+
                     SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                     //! TextField for password
 
