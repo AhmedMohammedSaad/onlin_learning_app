@@ -12,7 +12,7 @@ class SignIn_with_Google extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, '/SigninPage');
+        Navigator.pushNamed(context, '/SigninScreen');
       },
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
