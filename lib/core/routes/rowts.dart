@@ -21,7 +21,7 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const HomeScreen());
       case '/LoginPage':
         return MaterialPageRoute(builder: (_) => const LoginPage());
-      case '/SigninPage':
+      case '/SigninScreen':
         return MaterialPageRoute(builder: (_) => SigninScreen());
       case '/PhoneVerificationPage':
         return MaterialPageRoute(builder: (_) => PhoneVerificationPage());
