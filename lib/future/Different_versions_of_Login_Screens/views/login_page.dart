@@ -1,5 +1,4 @@
 // ignore_for_file: avoid_print
-
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:onlin_learning_app/future/Different_versions_of_Login_Screens/widgets/widget_login/boton_signub.dart';
@@ -161,7 +160,7 @@ class _LoginPageState extends State<LoginPage> {
       gmailControl.clear();
       passControl.clear();
       // ignore: use_build_context_synchronously
-      Navigator.pushNamed(context, '/SigninPage');
+      Navigator.pushNamed(context, '/DetailsScreen');
     } else {
       var errorResponse = json.decode(response.body);
       var errorMessage = errorResponse["errors"][0]["msg"];

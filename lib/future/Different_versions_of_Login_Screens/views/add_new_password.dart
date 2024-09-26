@@ -107,7 +107,7 @@ class _AddNewPasswordState extends State<AddNewPassword> {
 
       gmailControl.clear();
       passControl.clear();
-      Navigator.pushNamed(context, '/');
+      Navigator.pushNamed(context, '/LoginPage');
     } else {
       var responseDecode = json.decode(response.body);
       var errorMessage = responseDecode["message"];
