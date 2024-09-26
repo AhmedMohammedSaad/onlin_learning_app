@@ -23,8 +23,7 @@ class _LoginPageState extends State<LoginPage> {
   bool isVisibility = true;
   final TextEditingController gmailControl = TextEditingController();
   final TextEditingController passControl = TextEditingController();
-  final GlobalKey gkey = GlobalKey<FormState>();
-  final GlobalKey pkey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _gkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -37,75 +36,89 @@ class _LoginPageState extends State<LoginPage> {
             child: Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: MediaQuery.of(context).size.width * 0.05),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-                  //! The look is in Container
-                  const TheLook_in_Login(),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-                  //! Text welcome back
-                  const TextWelcome(),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-                  //! Text subtitle welcome back
-                  const TextSubtitle(),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-                  //! TextField for email
-                  ResponsiveTextField(
-                    controller: gmailControl,
-                    key: gkey,
-                    obscureText: false,
-                    lrefixIcons: const Icon(Icons.email_outlined),
-                    labelText: 'Email',
-                  ),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-                  //! TextField for password
+              child: Form(
+                key: _gkey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+                    //! The look is in Container
+                    const TheLook_in_Login(),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                    //! Text welcome back
+                    const TextWelcome(),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+                    //! Text subtitle welcome back
+                    const TextSubtitle(),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+                    //! TextField for email
+                    ResponsiveTextField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Enter your Email';
+                        }
+                        return null;
+                      },
+                      controller: gmailControl,
+                      obscureText: false,
+                      lrefixIcons: const Icon(Icons.email_outlined),
+                      labelText: 'Email',
+                    ),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                    //! TextField for password
 
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        child: ResponsiveTextField(
-                          key: pkey,
-                          controller: passControl,
-                          obscureText: isVisibility,
-                          lrefixIcons: IconButton(
-                            onPressed: () {
-                              setState(() {
-                                //! Toggle visibility of the password
-                                isVisibility = !isVisibility;
-                              });
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: ResponsiveTextField(
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Enter your Password';
+                              }
+                              return null;
                             },
-                            icon: isVisibility
-                                ? const Icon(Icons.visibility_off_outlined)
-                                : const Icon(
-                                    Icons.visibility_outlined,
-                                  ),
+                            controller: passControl,
+                            obscureText: isVisibility,
+                            lrefixIcons: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  //! Toggle visibility of the password
+                                  isVisibility = !isVisibility;
+                                });
+                              },
+                              icon: isVisibility
+                                  ? const Icon(Icons.visibility_off_outlined)
+                                  : const Icon(
+                                      Icons.visibility_outlined,
+                                    ),
+                            ),
+                            labelText: 'Password',
                           ),
-                          labelText: 'Password',
                         ),
-                      ),
-                      PingerPrint(screenWidth: screenWidth),
-                    ],
-                  ),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-                  //! Button Sign in
-                  BottomSignin(
-                    onTap: () {
-                      _signIn();
-                    },
-                    name: "Sign in",
-                  ),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-                  //! OR
-                  const Text("(or)", style: TextStyle(fontSize: 16)),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-                  //! Sign in with Google
-                  const SignIn_with_Google(),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-                  //! Text Have an account Signup
-                  const Have_an_account_Signup_text(),
-                ],
+                        PingerPrint(screenWidth: screenWidth),
+                      ],
+                    ),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                    //! Button Sign in
+                    BottomSignin(
+                      onTap: () {
+                        if (_gkey.currentState!.validate()) {}
+                        _signIn();
+                      },
+                      name: "Sign in",
+                    ),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                    //! OR
+                    const Text("(or)", style: TextStyle(fontSize: 16)),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                    //! Sign in with Google
+                    const SignIn_with_Google(),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                    //! Text Have an account Signup
+                    const Have_an_account_Signup_text(),
+                  ],
+                ),
               ),
             ),
           ),
@@ -131,13 +144,19 @@ class _LoginPageState extends State<LoginPage> {
       print(errorMessage);
       print(response.statusCode);
       print('Success');
+
+      gmailControl.clear();
+      passControl.clear();
       // ignore: use_build_context_synchronously
-      Navigator.pushNamed(context, '/');
+      Navigator.pushNamed(context, '/SigninPage');
     } else {
       var errorResponse = json.decode(response.body);
-      var errorMessage = errorResponse['message'];
+      var errorMessage = errorResponse["errors"][0]["msg"];
       print(errorMessage);
       print(response.statusCode);
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text(errorMessage.toString()),
+      ));
       print('Error');
     }
   }

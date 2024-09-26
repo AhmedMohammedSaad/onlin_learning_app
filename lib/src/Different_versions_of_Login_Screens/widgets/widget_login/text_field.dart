@@ -9,14 +9,17 @@ class ResponsiveTextField extends StatelessWidget {
     required this.lrefixIcons,
     required this.obscureText,
     required this.controller,
+    required this.validator,
   });
   final String labelText;
   final Widget lrefixIcons;
   final bool obscureText;
   final controller;
+  final String? Function(String?)? validator;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: validator,
       controller: controller,
       obscureText: obscureText,
       decoration: InputDecoration(

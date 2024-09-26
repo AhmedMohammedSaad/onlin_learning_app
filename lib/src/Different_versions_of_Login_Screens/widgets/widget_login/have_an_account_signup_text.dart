@@ -22,7 +22,7 @@ class Have_an_account_Signup_text extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            Navigator.pushNamed(context, '/VerifyPhonePage');
+            Navigator.pushNamed(context, '/SignUp');
           },
           child: const Text(
             ' Sign up',
