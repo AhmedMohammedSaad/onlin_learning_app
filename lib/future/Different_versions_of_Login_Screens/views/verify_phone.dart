@@ -147,7 +147,7 @@ class _PhoneVerificationPageState extends State<PhoneVerificationPage> {
       for (var controller in controllers) {
         controller.clear();
       }
-      Navigator.pushNamed(context, '/SigninScreen');
+      Navigator.pushNamed(context, '/AddNewPassword');
     } else {
       var responseDecode = json.decode(response.body);
       var errorMessage = responseDecode["message"];

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:onlin_learning_app/future/Booking_and_Time/view/timer.dart';
+import 'package:onlin_learning_app/future/Different_versions_of_Login_Screens/views/add_new_password.dart';
 import 'package:onlin_learning_app/future/Different_versions_of_Login_Screens/views/login_page.dart';
 import '../../future/Booking_and_Time/view/booking.dart';
 import '../../future/Course_page_Detailes/views/details.dart';
@@ -38,6 +39,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const SignUp());
       case '/SendEmailResetPass':
         return MaterialPageRoute(builder: (_) => SendEmailResetPass());
+      case '/AddNewPassword':
+        return MaterialPageRoute(builder: (_) => const AddNewPassword());
       default:
         //!Home Page If the path does not exist, the page is displayed.
         return MaterialPageRoute(builder: (_) => const HomeScreen());
