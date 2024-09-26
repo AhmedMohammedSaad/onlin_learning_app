@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:onlin_learning_app/future/Booking_and_Time/components/appbar_mthode.dart';
-import '../../Booking_and_Time/model/constant.dart';
-import '../widgets/course_description.dart';
-import '../widgets/course_info.dart';
-import '../widgets/section_main.dart';
-import '../widgets/title_section.dart';
-import '../widgets/videw_card.dart';
+import 'package:onlin_learning_app/future/Booking_and_Time/model/constant.dart';
+import 'package:onlin_learning_app/future/Course_page_Detailes/widgets/course_description.dart';
+import 'package:onlin_learning_app/future/Course_page_Detailes/widgets/course_info.dart';
+import 'package:onlin_learning_app/future/Course_page_Detailes/widgets/section_main.dart';
+import 'package:onlin_learning_app/future/Course_page_Detailes/widgets/title_section.dart';
+import 'package:onlin_learning_app/future/Course_page_Detailes/widgets/videw_card.dart';
 
 class DetailsScreen extends StatefulWidget {
   const DetailsScreen({super.key});

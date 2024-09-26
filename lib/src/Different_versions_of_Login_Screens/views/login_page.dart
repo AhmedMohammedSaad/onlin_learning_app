@@ -3,12 +3,13 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:onlin_learning_app/future/Different_versions_of_Login_Screens/widgets/widget_login/boton_signub.dart';
+import 'package:onlin_learning_app/future/Different_versions_of_Login_Screens/widgets/widget_login/icon_look_login.dart';
+import 'package:onlin_learning_app/future/Different_versions_of_Login_Screens/widgets/widget_login/pinger_print.dart';
+import 'package:onlin_learning_app/future/Different_versions_of_Login_Screens/widgets/widget_login/sigin_google.dart';
+import 'package:onlin_learning_app/future/Different_versions_of_Login_Screens/widgets/widget_login/text.dart';
 import '../models/constant.dart';
 import '../widgets/widget_login/have_an_account_signup_text.dart';
-import '../widgets/widget_login/pinger_print.dart';
-import '../widgets/widget_login/sigin_google.dart';
-import '../widgets/widget_login/icon_look_login.dart';
-import '../widgets/widget_login/text.dart';
+
 import '../widgets/widget_login/text_field.dart';
 import 'package:http/http.dart' as http;
 

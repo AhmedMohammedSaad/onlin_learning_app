@@ -1,12 +1,12 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:onlin_learning_app/future/onboarding/models/model.dart';
 import 'package:onlin_learning_app/future/onboarding/views/pages/page_view.dart';
+import 'package:onlin_learning_app/future/onboarding/views/widgets/bottom_login.dart';
+import 'package:onlin_learning_app/future/onboarding/views/widgets/bottom_regster.dart';
+import 'package:onlin_learning_app/future/onboarding/views/widgets/bottom_skip.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../../models/model.dart';
-import '../widgets/bottom_login.dart';
-import '../widgets/bottom_regster.dart';
-import '../widgets/bottom_skip.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:onlin_learning_app/future/Course_page_Detailes/components/card_feedback.dart';
+import 'package:onlin_learning_app/future/Course_page_Detailes/widgets/comment_title.dart';
 import 'package:onlin_learning_app/future/Course_page_Detailes/widgets/comment_widget.dart';
-
-import '../../Different_versions_of_Login_Screens/widgets/widget_login/boton_signub.dart';
-import '../components/card_feedback.dart';
-import 'comment_title.dart';
-import 'container_projects.dart';
-import 'list_feedback.dart';
-import 'progct_by_student_and_add.dart';
+import 'package:onlin_learning_app/future/Course_page_Detailes/widgets/container_projects.dart';
+import 'package:onlin_learning_app/future/Course_page_Detailes/widgets/list_feedback.dart';
+import 'package:onlin_learning_app/future/Course_page_Detailes/widgets/progct_by_student_and_add.dart';
+import 'package:onlin_learning_app/future/Different_versions_of_Login_Screens/widgets/widget_login/boton_signub.dart';
 
 class SectionMain extends StatelessWidget {
   const SectionMain({

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:onlin_learning_app/future/Booking_and_Time/components/appbar_mthode.dart';
+import 'package:onlin_learning_app/future/Booking_and_Time/widget/booking_widget/stack_good_job.dart';
+import 'package:onlin_learning_app/future/Booking_and_Time/widget/timer_widget/time_display.dart';
+import 'package:onlin_learning_app/future/Booking_and_Time/widget/timer_widget/time_header.dart';
+import 'package:onlin_learning_app/future/Booking_and_Time/widget/timer_widget/timer_list.dart';
+import 'package:onlin_learning_app/future/Booking_and_Time/widget/timer_widget/today_section.dart';
 import 'package:onlin_learning_app/future/Different_versions_of_Login_Screens/widgets/widget_login/boton_signub.dart';
-import '../components/appbar_mthode.dart';
-import '../widget/booking_widget/stack_good_job.dart';
-import '../widget/timer_widget/time_display.dart';
-import '../widget/timer_widget/time_header.dart';
-import '../widget/timer_widget/timer_list.dart';
-import '../widget/timer_widget/today_section.dart';
 
 // Main page that contains the timer display and other sections
 class TimerPage extends StatelessWidget {
