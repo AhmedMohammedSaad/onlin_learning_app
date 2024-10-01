@@ -119,7 +119,6 @@ class _PhoneVerificationPageState extends State<PhoneVerificationPage> {
     );
   }
 
-  //! Send Email for Reset Password
   //! Send Code for Phone Verification
   _sendCode() async {
     var resetCode = controllers.map((controller) => controller.text).join();
